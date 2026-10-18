@@ -1,0 +1,113 @@
+***********************************
+Use Case : Banking System Operation:
+***********************************
+
+Two Classes:
+Parent Class	 = User Information (User)
+Child Class		 = Banking Operation (Bank)
+
+User Class:
+	Initialize  instance attributes
+	Instance Method(to display the value )	method Name : Show_details()
+
+Bank Class:
+	Perform below operations:
+		Deposit
+			Balance  + Amount
+		withdraw
+			if amount > balnace:
+				Failed
+			else
+				Balance - Amount
+
+		view_Balance:
+			display user Info + Updated Balance
+
+Assignment for class and Objects:
+
+
+******************************************************
+Use Case: Flight class with Passenger Capacity Checks
+******************************************************
+
+Problem Statement: Write a Python program that creates a Passenger class and a Flight class.
+The Flight class should manage a list of Passenger objects and block further bookings
+when the seat capacity is reached.
+
+Purpose: This exercise models a real-world object composition scenario where one class owns and manages a
+  collection of another class. It also teaches boundary enforcement,
+  where business rules (capacity limits) are built directly into the class methods.
+
+Given Input: A Flight with capacity 2, then three booking attempts
+
+Expected Output:
+
+Alice booked on Flight AI202.
+Bob booked on Flight AI202.
+Sorry, Flight AI202 is fully booked.
+
+
+
+
+
+****************************************
+Mini_Project abount Regular Expression:
+****************************************
+
+use case: Automate the ETL log monitoring & Generate Reports
+
+
+Sample log file:
+File Name : etl_log.txt
+[2025-10-06 00:01:23] INFO  JobID=123 Start ETL Process for customer_data.csv
+[2025-10-06 00:03:11] ERROR JobID=123 Missing column: customer_id
+[2025-10-06 00:03:15] INFO  JobID=123 ETL Process failed
+[2025-10-06 01:10:43] INFO  JobID=124 Start ETL Process for sales_data.csv
+[2025-10-06 01:13:09] INFO  JobID=124 ETL Process completed successfully
+[2025-10-06 02:22:19] INFO  JobID=125 Start ETL Process for revenue_data.csv
+[2025-10-06 02:30:10] ERROR JobID=125 File not found: revenue_data.csv
+[2025-10-06 02:30:15] INFO  JobID=125 ETL Process failed
+
+
+Sample output file:
+
+Example Output (etl_report_20251006.csv)
+JobID		Status	Error
+123			Failed	Missing column: customer_id
+124			Success
+125			Failed	File not found: revenue_data.csv
+
+
+Steps:
+1) parse the every line of the log file
+2) Identify the job status :
+	i) pattern 1 =  error records  = r'ERROR\s+obID=(\d+)\s+(.*)'
+	ii)pattern 2 = Success records = r'(\d+).*completed successfully'
+	iii) pattern 3 = fail records  = r'JobID=(\d+).*failed'
+
+3) Extract all the error records
+4) Exttrat all the success records
+5) Extract all the fail records
+6) Write step 3 to 5 records into csv file
+	output file format = etl_report_YYYYMMDD_HH24MISS.csv
+
+
+*******************************
+Password validation
+*******************************
+
+Need to verify the password and perform below rule checks
+
+i) Atleast 8 chars
+
+ii) Atleast one UpperCase char [A-Z]
+
+ii) Atleast one lowercase char [a-z]
+
+iv) Any one given speical char are allowed [%$#@]
+
+
+IF all above 4 rules are satisfied:
+	return the valid password
+else:
+	return the invalid password
