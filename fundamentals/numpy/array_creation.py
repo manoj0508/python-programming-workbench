@@ -49,10 +49,17 @@ def add_value_in_array():
     print(invalid_mask)
     print(qty[invalid_mask])
 
+def test():
+    arr = np.array([1, 2, 3, 4, 5, 6])
+    print(arr)
+    new_arr = arr.reshape(2, 3)
+    print(new_arr)
+
 def main():
    # arrange()
     #add_value_in_array()
-    difference_data()
+    #difference_data()
+    test()
 
 
 
